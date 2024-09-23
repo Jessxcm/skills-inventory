@@ -148,7 +148,7 @@ export class InMemDataService implements InMemoryDbService {
       username: 'ng-jess',
       password: 'ng-dreamcode',
       name: 'Jessica Cala',
-      email: 'jessica.cala@dreamcodesoft.com',
+      email: 'calajess@gmail.com',
       avatar: './assets/images/avatars/avatar-dreamcode.jpeg',
       role: 'Administrator',
     },

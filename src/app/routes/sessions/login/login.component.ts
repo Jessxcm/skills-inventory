@@ -39,7 +39,7 @@ export class LoginComponent {
   private initForm() {
     this.loginForm = this.fb.nonNullable.group({
       email: [
-        'nestor.martinez@dreamcodesoft.com',
+        'calajess@gmail.com',
         [Validators.required, this.getValidateEmailDomain(this.domainsAllowed)],
       ],
       password: ['ng-dreamcode', [Validators.required]],
