@@ -1,0 +1,272 @@
+# this is an auto generated file. This will be overwritten
+query GetAllUsers {
+  getAllUsers {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    firstName
+    lastName
+    email
+    identificationType
+    identification
+    country
+    cellphoneNumber
+    phoneNumber
+    city
+    birthDate
+    address
+    profile
+    image
+    status
+    creationDate
+    modificationDate
+    lastLoginDate
+    lastUse
+    isDeleted
+    isAdmin
+  }
+}
+query GetAllLanguages {
+  getAllLanguages {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameLanguage
+    level
+    reading
+    writting
+    listening
+    speaking
+    creationDate
+    updateDate
+    observations
+  }
+}
+query GetUser {
+  getUser {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    firstName
+    lastName
+    email
+    identificationType
+    identification
+    country
+    cellphoneNumber
+    phoneNumber
+    city
+    birthDate
+    address
+    profile
+    image
+    status
+    creationDate
+    modificationDate
+    lastLoginDate
+    lastUse
+    isDeleted
+    isAdmin
+  }
+}
+query GetSkill {
+  getSkill {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameSkill
+    description
+    level
+    experience
+    code
+    typeSkill
+  }
+}
+query GetAllSkill {
+  getAllSkill {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameSkill
+    description
+    level
+    experience
+    code
+    typeSkill
+  }
+}
+query GetAllProjects {
+  getAllProjects {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    type
+    client
+    nameProject
+    abbreviation
+    code
+    details
+    startDate
+    estimatedDate
+    endDate
+    observations
+    status
+    createdAt
+    updatedAt
+    tecnologies_mobile
+    tecnologies_frontend
+    tecnologies_backend
+    tecnologies_cloud
+    tecnologies_automatization
+    tecnologies_database
+    tecnologies_testing
+  }
+}
+query GetProjectByPkSk($pk: String!, $sk: String!) {
+  getProjectByPkSk(pk: $pk, sk: $sk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    type
+    client
+    nameProject
+    abbreviation
+    code
+    details
+    startDate
+    estimatedDate
+    endDate
+    observations
+    status
+    createdAt
+    updatedAt
+    tecnologies_mobile
+    tecnologies_frontend
+    tecnologies_backend
+    tecnologies_cloud
+    tecnologies_automatization
+    tecnologies_database
+    tecnologies_testing
+  }
+}
+query GetProjectsByClient($gsi1pk: String!, $valueToSearch: String!) {
+  getProjectsByClient(gsi1pk: $gsi1pk, valueToSearch: $valueToSearch) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    type
+    client
+    nameProject
+    abbreviation
+    code
+    details
+    startDate
+    estimatedDate
+    endDate
+    observations
+    status
+    createdAt
+    updatedAt
+    tecnologies_mobile
+    tecnologies_frontend
+    tecnologies_backend
+    tecnologies_cloud
+    tecnologies_automatization
+    tecnologies_database
+    tecnologies_testing
+  }
+}
+query GetLanguageByGSI1PK($gsi1pk: String!) {
+  getLanguageByGSI1PK(gsi1pk: $gsi1pk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameLanguage
+    level
+    reading
+    writting
+    listening
+    speaking
+    creationDate
+    updateDate
+    observations
+  }
+}
+query GetSkillsinventoryDevRegistrydbMainDB($pk: String!, $sk: String!) {
+  getSkillsinventoryDevRegistrydbMainDB(pk: $pk, sk: $sk) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}
+query ListSkillsinventoryDevRegistrydbMainDBS(
+  $filter: TableSkillsinventoryDevRegistrydbMainDBFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSkillsinventoryDevRegistrydbMainDBS(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      pk
+      sk
+      email
+      gsi1pk
+      gsi1sk
+    }
+    nextToken
+  }
+}
+query QuerySkillsinventoryDevRegistrydbMainDBSByGsi1pkGsi1skIndex(
+  $gsi1pk: String!
+  $first: Int
+  $after: String
+) {
+  querySkillsinventoryDevRegistrydbMainDBSByGsi1pkGsi1skIndex(
+    gsi1pk: $gsi1pk
+    first: $first
+    after: $after
+  ) {
+    items {
+      pk
+      sk
+      email
+      gsi1pk
+      gsi1sk
+    }
+    nextToken
+  }
+}
+query QuerySkillsinventoryDevRegistrydbMainDBSByEmailIndex(
+  $email: String!
+  $first: Int
+  $after: String
+) {
+  querySkillsinventoryDevRegistrydbMainDBSByEmailIndex(
+    email: $email
+    first: $first
+    after: $after
+  ) {
+    items {
+      pk
+      sk
+      email
+      gsi1pk
+      gsi1sk
+    }
+    nextToken
+  }
+}

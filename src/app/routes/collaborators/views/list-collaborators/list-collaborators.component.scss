@@ -1,0 +1,31 @@
+.cards {
+  margin: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+  font-size: 15px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.start-button {
+  order: 1;
+}
+
+.end-button {
+  order: 3;
+}
+
+.demo-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  order: 2;
+}

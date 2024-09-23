@@ -1,0 +1,9 @@
+<div class="matero-page-header-inner">
+  <div class="row d-flex justify-content-center align-items-center">
+    <mat-icon [fontIcon]="icon"></mat-icon>
+    <h1 class="matero-page-title">{{title | translate}}
+      <small>{{subtitle}}</small>
+    </h1>
+  </div>
+  <breadcrumb *ngIf="!hideBreadcrumb" [nav]="nav"></breadcrumb>
+</div>

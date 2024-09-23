@@ -1,0 +1,48 @@
+.row-align-rigth {
+  padding-right: 40px !important;
+  text-align: end !important;
+}
+
+.row-align-rigth button {
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+
+mat-form-field {
+  width: 100%;
+  font-size: 15px;
+}
+
+.btn-arrow {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-text {
+  padding-right: 8px;
+}
+
+.icon-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  float: right;
+  padding-left: 5px;
+  transform: translateY(-50%);
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.start-button {
+  order: 1;
+
+  /* Cambia el orden de aparición de los botones */
+}
+
+.end-button {
+  order: 2;
+}

@@ -1,0 +1,58 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <img mat-card-avatar ngSrc="{{collaborator.picture.medium}}"
+         width="50" height="50" priority>
+    <mat-card-title>{{collaborator.name.first}} {{collaborator.name.last}}</mat-card-title>
+    <mat-card-subtitle>{{collaborator.job.position}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <!-- Face content: Skills -->
+  <mat-card-content *ngIf="!showSummary" [class.flip]="!!showSummary">
+    <ul *ngFor="let skill of collaborator.skills">
+      <li style="display: flex; justify-content: space-between; align-items: center;">
+        <span>{{skill.name}}</span>
+        <!-- <span [matBadgeColor]="skill.experience >= 3 ? 'primary' : 'warn'"
+              matBadge="{{skill.experience}}">
+        </span> -->
+        <span [ngClass]="{
+        'badge-junior': skill.experience > 0 && skill.experience <= 2,
+        'badge-middle': skill.experience > 2 && skill.experience <= 5,
+        'badge-senior': skill.experience > 5
+      }" class="badge" [innerText]="skill.experience">
+        </span>
+
+      </li>
+    </ul>
+  </mat-card-content>
+
+  <!-- Face content: Summary -->
+  <mat-card-content *ngIf="!!showSummary" [class.flip]="!!showSummary">
+    <ul>
+      <li><span>{{collaborator.login.username}}</span></li>
+      <li><span>{{collaborator.email}}</span></li>
+      <li><span>{{collaborator.cell}}</span></li>
+      <li><span>{{collaborator.dob.date}}</span></li>
+    </ul>
+  </mat-card-content>
+
+
+  <!-- <img style="margin-top: 10px; margin-bottom: 10px;" class="circular" mat-card-image
+       ngSrc="{{collaborator.picture.medium}}" width="150" height="150" priority> -->
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions class="centered-actions">
+    <button (click)="goToProfile(collaborator)" mat-button color="info">
+      <mat-icon>person</mat-icon>
+      Profile
+    </button>
+
+    <button (click)="rotateCard()" mat-button color="info">
+      <mat-icon>swap_vert</mat-icon>
+      {{!this.showSummary ? 'Summary' : 'Skills'}}
+    </button>
+  </mat-card-actions>
+
+</mat-card>

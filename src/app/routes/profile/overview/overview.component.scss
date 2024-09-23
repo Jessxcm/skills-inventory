@@ -1,0 +1,78 @@
+mat-form-field {
+  width: 100% !important;
+  font-size: 15px;
+}
+
+.row-align-rigth {
+  padding-right: 40px !important;
+  text-align: end !important;
+}
+
+.row-align-rigth button {
+  margin-right: 5px !important;
+  margin-left: 5px !important;
+}
+
+.whiteGreen {
+  display: inline;
+  padding: 2px 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: .8rem;
+  background: rgb(2, 114, 2, .8);
+  border-radius: 15px;
+}
+
+.whiteRed {
+  display: inline;
+  padding: 2px 10px;
+  color: #fff;
+  font-weight: 500;
+  font-size: .8rem;
+  background-color: rgba(114, 2, 26, .8);
+  border-radius: 15px;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke !important;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  display: flex;
+  overflow: hidden;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  height: 104px;
+  margin: 8px 0;
+  padding: 8px;
+  font-weight: lighter;
+  border: 2px solid black;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: .5;
+}

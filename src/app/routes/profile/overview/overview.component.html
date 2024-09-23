@@ -1,0 +1,650 @@
+<mat-card>
+
+  <mat-tab-group>
+
+    <mat-tab label="Basic Information">
+
+      <mat-card-content>
+
+        <form [formGroup]="reactiveFormBasicInformation"
+              (ngSubmit)="saveRecordBasicInformation()"
+              class="form-field-full">
+
+          <div class="row">
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Document Type</mat-label>
+                <mat-select formControlName="documentType" required>
+                  <!-- <mat-option>-- None --</mat-option> -->
+                  <mat-option value="cc">Cédula Ciudadanía</mat-option>
+                  <mat-option value="ce">Cédula Extranjeria</mat-option>
+                  <mat-option value="lc">Licencia de Conducir</mat-option>
+                  <mat-option value="pp">Pasaporte</mat-option>
+                </mat-select>
+                <mat-error
+                           *ngIf="reactiveFormBasicInformation.get('documentType')?.invalid">Please
+                  select
+                  document type</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Document Number</mat-label>
+                <input matInput placeholder="" formControlName="documentNumber"
+                       required [readonly]="false">
+                <mat-error
+                           *ngIf="reactiveFormBasicInformation.get('documentNumber')?.invalid">Please
+                  enter number
+                  number</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="" formControlName="name" required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('name')?.invalid">Please enter
+                  name
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Lastname</mat-label>
+                <input matInput placeholder="" formControlName="lastname"
+                       required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('lastname')?.invalid">Please
+                  enter lastname
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender" required>
+                  <!-- <mat-option>-- None --</mat-option> -->
+                  <mat-option value="male">Male</mat-option>
+                  <mat-option value="female">Female</mat-option>
+                </mat-select>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('gender')?.invalid">Please
+                  select
+                  gender</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Citizenship</mat-label>
+                <input matInput placeholder="" formControlName="citizenship"
+                       required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('citizenship')?.invalid">Please
+                  enter
+                  citizenship</mat-error>
+              </mat-form-field>
+            </div>
+
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Birthdate</mat-label>
+                <input matInput [matDatepicker]="picker2" placeholder="Choose a date"
+                       formControlName="birthdate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('birthdate')?.invalid">Please
+                  enter
+                  birthdate</mat-error>
+              </mat-form-field>
+            </div>
+
+              <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Civil Status</mat-label>
+                <mat-select formControlName="civilStatus" required>
+                  <mat-option value="sg">Single</mat-option>
+                  <mat-option value="dv">Divorced</mat-option>
+                  <mat-option value="wd">Widowed</mat-option>
+                  <mat-option value="sp">Separated</mat-option>
+                </mat-select>
+                <mat-error
+                           *ngIf="reactiveFormBasicInformation.get('civilStatus')?.invalid">Please
+                  select
+                  civilStatus</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Mobile</mat-label>
+                <input matInput placeholder="" type="text"
+                       formControlName="mobile"
+                       required>
+                <mat-icon matSuffix>smartphone</mat-icon>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('mobile')?.invalid">Please
+                  enter
+                  mobile</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Telephone</mat-label>
+                <input matInput placeholder="" type="text"
+                       formControlName="tele"
+                       required>
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('tele')?.invalid">Please enter
+                  tele</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="" formControlName="country"
+                       required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('country')?.invalid">Please
+                  enter
+                  country</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>State</mat-label>
+                <input matInput placeholder="" formControlName="state"
+                       required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('state')?.invalid">Please enter
+                  state</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>City</mat-label>
+                <input matInput placeholder="" formControlName="city" required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('city')?.invalid">Please enter
+                  city</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="" formControlName="address"
+                       required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('address')?.invalid">Please
+                  enter
+                  address</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="" formControlName="email" required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('email')?.invalid">
+                  {{getErrorMessage(reactiveFormBasicInformation)}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="" formControlName="username"
+                       required>
+                <mat-error *ngIf="reactiveFormBasicInformation.get('username')?.invalid">Please
+                  enter username
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="d-flex justify-content-start">
+            <button type="submit" mat-raised-button color="primary">
+              <mat-icon>save</mat-icon>
+              Save
+            </button>
+          </div>
+        </form>
+
+      </mat-card-content>
+
+    </mat-tab>
+
+    <mat-tab label="RRHH" *ngIf="user.role === 'Administrator'">
+      <mat-card-content>
+        <form [formGroup]="reactiveFormJob" (ngSubmit)="saveRecordJob()" class="form-field-full">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-label>Position</mat-label>
+                <input matInput placeholder="" formControlName="position"
+                       required>
+                <mat-error *ngIf="reactiveFormJob.get('position')?.invalid">Please enter position
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-label>Salary</mat-label>
+                <input matInput placeholder="" formControlName="salary"
+                       required>
+                <mat-error *ngIf="reactiveFormJob.get('salary')?.invalid">Please enter salary
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>EPS</mat-label>
+                <input matInput placeholder="" formControlName="eps"
+                       required>
+                <mat-error *ngIf="reactiveFormJob.get('eps')?.invalid">Please enter EPS
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Cesantias</mat-label>
+                <input matInput placeholder="" formControlName="cesantias"
+                       required>
+                <mat-error *ngIf="reactiveFormJob.get('cesantias')?.invalid">Please enter Cesantias
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Pension</mat-label>
+                <input matInput placeholder="" formControlName="pension"
+                       required>
+                <mat-error *ngIf="reactiveFormJob.get('pension')?.invalid">Please enter Pension
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+              <mat-form-field>
+                <mat-label>Rh</mat-label>
+                <input matInput placeholder="" formControlName="rh"
+                       required>
+                <mat-error *ngIf="reactiveFormJob.get('rh')?.invalid">Please enter Rh
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-label>Date Admission</mat-label>
+                <input matInput [matDatepicker]="picker2" placeholder="Choose a date"
+                       formControlName="dateAdmission">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+                <mat-error *ngIf="reactiveFormJob.get('dateAdmission')?.invalid">Please enter Date
+                  Admission</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status" required>
+                  <!-- <mat-option>-- None --</mat-option> -->
+                  <mat-option value="active">Active</mat-option>
+                  <mat-option value="inactive">Inactive</mat-option>
+                </mat-select>
+                <mat-error *ngIf="reactiveFormJob.get('status')?.invalid">Please select
+                  status</mat-error>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="d-flex justify-content-start">
+            <button [disabled]="!isSaveBasicInformation" type="submit" mat-raised-button
+                    color="primary">
+              <mat-icon>save</mat-icon>
+              Save
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+
+    </mat-tab>
+
+    <mat-tab label="Skills">
+
+      <mat-card-content>
+        <h2>Skills</h2>
+        <div class="demo-button-container">
+          <!-- <button type="button" (click)="openForm()"
+                  mat-raised-button class="demo-button">
+            Add Skill
+          </button> -->
+          <!--<button type="button" [disabled]="!isSaveBasicInformation" (click)="openForm()"
+                  mat-raised-button class="demo-button">-->
+          <button type="button" (click)="openForm()"
+                  mat-raised-button class="demo-button">
+            Add Skill
+          </button>
+        </div>
+        <br>
+
+        <table mat-table [dataSource]="dataSkills" class="mat-elevation-z8 demo-table">
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          </ng-container>
+
+          <!-- Experience Column -->
+          <ng-container matColumnDef="experience">
+            <th mat-header-cell *matHeaderCellDef>Experience</th>
+            <td mat-cell *matCellDef="let element">{{element.experience}} Years</td>
+          </ng-container>
+
+          <!-- Level Column -->
+          <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef>Level</th>
+            <td mat-cell *matCellDef="let element">{{element.level}} </td>
+          </ng-container>
+
+          <!-- Clasificacion Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">{{element.type}} </td>
+          </ng-container>
+
+          <!-- Options Column -->
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element" class="row-align-rigth">
+
+              <button mat-icon-button matTooltip="Edit"
+                      aria-label="Example icon-button with a heart icon"
+                      [disabled]="!dataSkills.length">
+
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button matTooltip="Delete"
+                      aria-label="Example icon-button with a heart icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+          </tr>
+        </table>
+
+      </mat-card-content>
+
+      <mat-card-content>
+        <h2>Languages</h2>
+        <div class="demo-button-container">
+          <button type="button" [disabled]="!isSaveBasicInformation" mat-raised-button
+                  class="demo-button">
+            Add Language
+          </button>
+        </div>
+        <br>
+
+        <table mat-table [dataSource]="dataLanguages" class="mat-elevation-z8 demo-table">
+          <!-- Name Column -->
+          <ng-container matColumnDef="language">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let language">{{language.name}}</td>
+          </ng-container>
+
+          <!-- Experience Column -->
+          <ng-container matColumnDef="general">
+            <th mat-header-cell *matHeaderCellDef>General</th>
+            <td mat-cell *matCellDef="let language">{{language.general}}</td>
+          </ng-container>
+
+          <!-- Experience Column -->
+          <ng-container matColumnDef="writting">
+            <th mat-header-cell *matHeaderCellDef>Writting</th>
+            <td mat-cell *matCellDef="let language">{{language.writting}}</td>
+          </ng-container>
+
+          <!-- Experience Column -->
+          <ng-container matColumnDef="speaking">
+            <th mat-header-cell *matHeaderCellDef>Speaking</th>
+            <td mat-cell *matCellDef="let language">{{language.speaking}}</td>
+          </ng-container>
+
+          <!-- Experience Column -->
+          <ng-container matColumnDef="listening">
+            <th mat-header-cell *matHeaderCellDef>Listening</th>
+            <td mat-cell *matCellDef="let language">{{language.listening}}</td>
+          </ng-container>
+
+          <!-- Experience Column -->
+          <ng-container matColumnDef="reading">
+            <th mat-header-cell *matHeaderCellDef>Reading</th>
+            <td mat-cell *matCellDef="let language">{{language.reading}}</td>
+          </ng-container>
+
+          <!-- Options Column -->
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element" class="row-align-rigth">
+
+              <button mat-icon-button matTooltip="Edit"
+                      aria-label="Example icon-button with a heart icon"
+                      [disabled]="!dataLanguages.length">
+
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button matTooltip="Delete"
+                      aria-label="Example icon-button with a heart icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+        </table>
+
+
+      </mat-card-content>
+    </mat-tab>
+
+    <!-- <mat-tab label="Languages">
+
+
+
+
+    </mat-tab> -->
+
+    <mat-tab label="Projects">
+
+      <mat-card-content>
+
+        <div class="demo-button-container">
+          <button type="button" [disabled]="!isSaveBasicInformation" mat-raised-button
+                  class="demo-button">
+            Add Project
+          </button>
+        </div>
+        <br>
+
+        <table mat-table [dataSource]="dataProjects" class="mat-elevation-z8 demo-table">
+          <!-- Id Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>#</th>
+            <td mat-cell *matCellDef="let projects">{{projects.id}}</td>
+          </ng-container>
+
+          <!-- Projects Column -->
+          <ng-container matColumnDef="projectName">
+            <th mat-header-cell *matHeaderCellDef>Projects</th>
+            <td mat-cell *matCellDef="let projects">{{projects.projectName}}</td>
+          </ng-container>
+
+          <!-- Projects Column -->
+          <ng-container matColumnDef="projectLeader">
+            <th mat-header-cell *matHeaderCellDef>Leader</th>
+            <td mat-cell *matCellDef="let projects">{{projects.projectLeader}}</td>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="commencementDate">
+            <th mat-header-cell *matHeaderCellDef>Commencement Date</th>
+            <td mat-cell *matCellDef="let projects">{{projects.commencementDate}}</td>
+          </ng-container>
+
+          <!-- Date Column -->
+          <ng-container matColumnDef="completionDate">
+            <th mat-header-cell *matHeaderCellDef>Completion Date</th>
+            <td mat-cell *matCellDef="let projects">{{projects.completionDate}}</td>
+          </ng-container>
+
+          <!-- Status Column -->
+          <ng-container matColumnDef="ProjectStatus">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let projects">
+              <span [ngClass]="{
+                                                  whiteGreen: projects.ProjectStatus === 'open',
+                                                  whiteRed: projects.ProjectStatus === 'complete'}">
+                {{ projects.ProjectStatus | titlecase }}
+              </span>
+              <!-- <button *ngIf="projects.status === 'open'" mat-raised-button color="primary">
+                {{projects.status}}
+              </button>
+              <button *ngIf="projects.status === 'complete'" mat-raised-button disabled>
+                {{projects.status}}
+              </button> -->
+            </td>
+          </ng-container>
+
+          <!-- Options Column -->
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let projects" class="row-align-rigth">
+
+              <button mat-icon-button matTooltip="Edit"
+                      aria-label="Example icon-button with a heart icon">
+
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button matTooltip="Delete"
+                      aria-label="Example icon-button with a heart icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="projectsColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: projectsColumns;"></tr>
+        </table>
+
+
+      </mat-card-content>
+
+
+    </mat-tab>
+
+    <mat-tab label="Studies">
+
+      <mat-card-content>
+
+        <div class="demo-button-container">
+          <button type="button" [disabled]="!isSaveBasicInformation" mat-raised-button
+                  class="demo-button">
+            Add Studies
+          </button>
+        </div>
+        <br>
+        <table mat-table [dataSource]="dataStudies" class="mat-elevation-z8 demo-table">
+          <!-- Id Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>#</th>
+            <td mat-cell *matCellDef="let studies">{{studies.id}}</td>
+          </ng-container>
+
+          <!-- Studies Column -->
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Studies</th>
+            <td mat-cell *matCellDef="let studies">{{studies.title}}</td>
+          </ng-container>
+
+          <!-- Studies Start Date Column -->
+          <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef>Start Date</th>
+            <td mat-cell *matCellDef="let studies">{{studies.startDate}}</td>
+          </ng-container>
+
+          <!-- Studies Start Date Column -->
+          <ng-container matColumnDef="endDate">
+            <th mat-header-cell *matHeaderCellDef>Finish Date</th>
+            <td mat-cell *matCellDef="let studies">{{studies.endDate}}</td>
+          </ng-container>
+
+          <!-- Status Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let studies">
+              <span [ngClass]="{
+                                                  whiteGreen: studies.status === 'open',
+                                                  whiteRed: studies.status === 'complete'}">
+                {{ studies.status | titlecase }}
+              </span>
+            </td>
+          </ng-container>
+
+           <!-- Institution Column -->
+           <ng-container matColumnDef="institution">
+            <th mat-header-cell *matHeaderCellDef>Institution</th>
+            <td mat-cell *matCellDef="let studies">{{studies.institution}}</td>
+          </ng-container>
+
+          <!-- Options Column -->
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let studies" class="row-align-rigth">
+
+              <button mat-icon-button matTooltip="Edit"
+                      aria-label="Example icon-button with a heart icon">
+
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button matTooltip="Delete"
+                      aria-label="Example icon-button with a heart icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="studiesColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: studiesColumns;"></tr>
+        </table>
+
+      </mat-card-content>
+
+
+    </mat-tab>
+
+  </mat-tab-group>
+
+</mat-card>

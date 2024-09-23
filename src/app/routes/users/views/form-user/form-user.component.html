@@ -1,0 +1,97 @@
+<mat-toolbar align="center" class="space-between" color="primary">
+  <span class=" centered">
+    <mat-icon>{{icon_header}}</mat-icon>
+    {{title_header}}
+  </span>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-dialog-content>
+
+  <form [formGroup]="reactiveForm">
+
+
+    <div class="row">
+
+
+      <!-- Rol & Mail -->
+      <div class="col-md-6">
+
+        <!-- Rol -->
+        <mat-form-field>
+          <mat-label>Roles</mat-label>
+          <mat-select formControlName="roles" multiple>
+            <mat-option *ngFor="let role of roles | async" [value]="role.id">{{role.rol}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Rol</mat-label>
+          <mat-select formControlName="role" required>
+            <mat-option value="ADMIN">Admin</mat-option>
+            <mat-option value="MANAGER">Manager</mat-option>
+            <mat-option value="GUEST">Guest</mat-option>
+          </mat-select>
+          <mat-error
+                     *ngIf="reactiveForm.get('role')?.invalid">Please
+            select
+            role</mat-error>
+        </mat-form-field> -->
+
+        <!-- Mail -->
+        <mat-form-field appearance="fill" class="demo-full-width">
+          <mat-label>Correo:</mat-label>
+          <input formControlName="correo" type="text" matInput required>
+          <mat-error *ngIf="">El correo es obligatorio</mat-error>
+        </mat-form-field>
+
+
+      </div>
+
+      <!--  Names & Password -->
+      <div class="col-md-6">
+
+        <!-- Name -->
+        <mat-form-field appearance="fill" class="demo-full-width">
+          <mat-label>Name:</mat-label>
+          <input formControlName="nombre" type="text" matInput required>
+          <mat-error *ngIf="">El nombre es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field appearance="fill" class="demo-full-width">
+          <mat-label>Contraseña:</mat-label>
+          <input formControlName="password" type="text" matInput>
+          <mat-error *ngIf="">La contraseña es obligatoria</mat-error>
+        </mat-form-field>
+
+      </div>
+    </div>
+
+    <div class="row" style="justify-content: flex-end;">
+      <mat-dialog-actions>
+
+        <!-- Save -->
+        <button type="button" mat-raised-button mat-dialog-close
+                color="primary" [disabled]="reactiveForm.invalid" cdkFocusInitial
+                (click)="save()">
+          <mat-icon>save</mat-icon>
+          Save
+        </button>
+
+        <!-- Close -->
+        <button style="background-color: #212121 !important; color: white; "
+                type="button"
+                mat-raised-button
+                mat-dialog-close>
+          <mat-icon>close</mat-icon>
+          Close
+        </button>
+
+      </mat-dialog-actions>
+    </div>
+
+  </form>
+</mat-dialog-content>

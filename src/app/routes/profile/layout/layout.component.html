@@ -1,0 +1,98 @@
+<page-header class="p-t-32 p-b-48 m-b--24 bg-gray-900"
+             [icon]="icon_header" [title]="title_header" hideBreadcrumb>
+</page-header>
+
+<div class="row">
+  <div class="col-sm-4 col-md-4 col-lg-12">
+    <mat-card>
+      <mat-card-content>
+      <div class="text-center row align-items-center">
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <ng-container *ngIf="!collaborator; else collaboratorImage">
+            <img class="m-b-8 r-full"
+                 ngSrc="{{'assets/images/dreamcode.jpeg'}}"
+                 width="120"
+                 height="120" priority>
+          </ng-container>
+
+          <ng-template #collaboratorImage>
+            <img class="m-b-8 r-full"
+                 ngSrc="{{collaborator.picture.large }}"
+                 width="120"
+                 height="120" priority>
+          </ng-template>
+
+          <h2 *ngIf="collaborator" class="m-t-0 m-b-8 f-w-400">{{ collaborator.name.first }}
+            {{collaborator.name.last }}
+          </h2>
+          <p *ngIf="collaborator" class="m-t-0 m-b-8">{{ collaborator.job.position}}</p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+
+          <p *ngIf="collaborator" class="m-t-0 text-grey-500">
+            Hi I'm {{ collaborator.name.first }}.
+            Computer systems
+            engineer with over experience in developing high-quality
+            applications. I have a strong background in information technologies and
+            experience in implementing modern architectures.</p>
+        </div>
+          <!-- <a mat-raised-button class="m-l-8"
+             href="https://www.linkedin.com/in/nestor-mart%C3%ADnez-c-751232209/" target="_blank">
+            <img ngSrc="https://cdn0.iconfinder.com/data/icons/some1-design/512/linkedin_512.png"
+                 width="40"
+                 height="40" priority>
+          </a> -->
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <a *ngIf="collaborator" mat-raised-button class="m-l-8"
+              href="MSTeams:/l/chat/0/0?users= {{ collaborator.email }}"
+              target="_blank">
+            <img src="https://cdn0.iconfinder.com/data/icons/logos-microsoft-office-365/128/Microsoft_Office-10-512.png"
+                  width="40"
+                  height="40" priority>
+          </a>
+
+          <a *ngIf="collaborator" mat-raised-button class="m-l-8"
+              href="https://api.whatsapp.com/send?phone=57{{collaborator.phone}}&text=¡Hola {{ collaborator.name.first }}!, Es un gusto saludarte. Mi nombre es [tu nombre] y formo parte del equipo de DREAMCODE. Me pongo en contacto contigo para expresar nuestro interés en tu perfil profesional y para invitarte a una reunión para conocer un poco más acerca de tu expericia laboral. Quedamos atentos a tu respuesta. ¡Saludos cordiales!"
+              target="_blank">
+            <img src="https://cdn0.iconfinder.com/data/icons/some1-design/512/whatsapp_512.png"
+                  width="40"
+                  height="40" priority>
+          </a>
+
+          <div *ngIf="collaborator" class="btn-cloud d-flex justify-content-center">
+            <button class="btn-upload" type="button" mat-raised-button color="primary"
+                    (click)="fileInput.click()">
+              <mat-icon>cloud_upload</mat-icon>
+              Upload File
+            </button>
+            <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+
+            <button class="btn-download" mat-raised-button color="primary"
+                    (click)="savePDF()">
+              <mat-icon>cloud_download</mat-icon>
+              Download CV
+            </button>
+          </div>
+        </div>
+
+      </div>
+        <!--
+        <mat-nav-list class="m-x--16 m-b--16 m-t-16">
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/profile/overview">
+            <mat-icon matListItemIcon>account_circle</mat-icon> Overview
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/profile/settings">
+            <mat-icon matListItemIcon>settings</mat-icon> Settings
+          </a>
+        </mat-nav-list>-->
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-8 col-md-8 col-lg-12">
+    <!-- <router-outlet></router-outlet>-->
+    <app-profile-overview (newItemEvent)="getCollaborator($event)"></app-profile-overview>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateSkillsinventoryDevRegistrydbMainDB(
+  $pk: String
+  $sk: String
+  $email: String
+  $gsi1pk: String
+  $gsi1sk: String
+) {
+  onCreateSkillsinventoryDevRegistrydbMainDB(
+    pk: $pk
+    sk: $sk
+    email: $email
+    gsi1pk: $gsi1pk
+    gsi1sk: $gsi1sk
+  ) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}
+subscription OnUpdateSkillsinventoryDevRegistrydbMainDB(
+  $pk: String
+  $sk: String
+  $email: String
+  $gsi1pk: String
+  $gsi1sk: String
+) {
+  onUpdateSkillsinventoryDevRegistrydbMainDB(
+    pk: $pk
+    sk: $sk
+    email: $email
+    gsi1pk: $gsi1pk
+    gsi1sk: $gsi1sk
+  ) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}
+subscription OnDeleteSkillsinventoryDevRegistrydbMainDB(
+  $pk: String
+  $sk: String
+  $email: String
+  $gsi1pk: String
+  $gsi1sk: String
+) {
+  onDeleteSkillsinventoryDevRegistrydbMainDB(
+    pk: $pk
+    sk: $sk
+    email: $email
+    gsi1pk: $gsi1pk
+    gsi1sk: $gsi1sk
+  ) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}

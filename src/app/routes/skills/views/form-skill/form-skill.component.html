@@ -1,0 +1,103 @@
+<mat-toolbar align="center" class="space-between" color="primary">
+  <span class=" centered">
+    <mat-icon>{{icon_header}}</mat-icon>
+    {{title_header}}
+  </span>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-dialog-content>
+
+  <mat-card-content>
+    <form [formGroup]="reactiveForm" class="form-field-full">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Angular" formControlName="name" required>
+            <mat-error *ngIf="reactiveForm.get('name')?.invalid">
+              {{'validations.required' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-9">
+          <mat-form-field>
+            <mat-label>Experience</mat-label>
+            <input (change)="assignLevel()" matInput placeholder="4" formControlName="experience"
+                   type="number" required>
+            <mat-error *ngIf="reactiveForm.get('experience')?.invalid">
+              {{'validations.required' | translate}}
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+        <div class="col-sm-3 text-center d-flex justify-content-center align-items-center">
+          <span [ngClass]="{
+                  'badge-junior': reactiveForm.get('experience')?.value > 0 && reactiveForm.get('experience')?.value <= 2,
+                  'badge-middle': reactiveForm.get('experience')?.value > 2 && reactiveForm.get('experience')?.value <= 5,
+                  'badge-senior': reactiveForm.get('experience')?.value > 5
+                }" class="badge mr-2" [innerText]="reactiveForm.get('experience')?.value">
+          </span>
+          <p class="mb-0" style="margin-left: 5px;">{{selectedLevel ? selectedLevel : 'Junior'}}</p>
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <!--<mat-form-field>
+            <mat-label>Type</mat-label>
+            <input matInput placeholder="Technical" formControlName="type" required>
+            <mat-error *ngIf="reactiveForm.get('type')?.invalid">
+              {{'validations.required' | translate}}
+            </mat-error>
+          </mat-form-field>-->
+
+          <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select  formControlName="type" required>
+              <mat-option value="Technical">Technical</mat-option>
+              <mat-option value="Soft">Soft</mat-option>
+            </mat-select>
+            <mat-error *ngIf="reactiveForm.get('type')?.invalid">
+              {{'validations.required' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row" style="justify-content: flex-end;">
+        <mat-dialog-actions>
+
+          <!-- Save -->
+          <button type="button" mat-raised-button mat-dialog-close
+                  color="primary" [disabled]="reactiveForm.invalid" cdkFocusInitial
+                  (click)="save()">
+            <mat-icon>save</mat-icon>
+            Save
+          </button>
+
+          <!-- Close -->
+          <button style="background-color: #212121 !important; color: white; "
+                  type="button"
+                  mat-raised-button
+                  mat-dialog-close>
+            <mat-icon>close</mat-icon>
+            Close
+          </button>
+
+        </mat-dialog-actions>
+      </div>
+
+    </form>
+  </mat-card-content>
+
+
+</mat-dialog-content>

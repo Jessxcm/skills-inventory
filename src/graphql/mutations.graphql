@@ -1,0 +1,295 @@
+# this is an auto generated file. This will be overwritten
+mutation UpdateUser($user: UpdateUserInput!) {
+  updateUser(user: $user) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    firstName
+    lastName
+    email
+    identificationType
+    identification
+    country
+    cellphoneNumber
+    phoneNumber
+    city
+    birthDate
+    address
+    profile
+    image
+    status
+    creationDate
+    modificationDate
+    lastLoginDate
+    lastUse
+    isDeleted
+    isAdmin
+  }
+}
+mutation DeleteUser($pk: String!, $sk: String!) {
+  deleteUser(pk: $pk, sk: $sk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    firstName
+    lastName
+    email
+    identificationType
+    identification
+    country
+    cellphoneNumber
+    phoneNumber
+    city
+    birthDate
+    address
+    profile
+    image
+    status
+    creationDate
+    modificationDate
+    lastLoginDate
+    lastUse
+    isDeleted
+    isAdmin
+  }
+}
+mutation DisableUser($pk: String!, $sk: String!) {
+  disableUser(pk: $pk, sk: $sk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    firstName
+    lastName
+    email
+    identificationType
+    identification
+    country
+    cellphoneNumber
+    phoneNumber
+    city
+    birthDate
+    address
+    profile
+    image
+    status
+    creationDate
+    modificationDate
+    lastLoginDate
+    lastUse
+    isDeleted
+    isAdmin
+  }
+}
+mutation AddProject($project: AddProjectInput!) {
+  addProject(project: $project) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    type
+    client
+    nameProject
+    abbreviation
+    code
+    details
+    startDate
+    estimatedDate
+    endDate
+    observations
+    status
+    createdAt
+    updatedAt
+    tecnologies_mobile
+    tecnologies_frontend
+    tecnologies_backend
+    tecnologies_cloud
+    tecnologies_automatization
+    tecnologies_database
+    tecnologies_testing
+  }
+}
+mutation UpdateProject($project: UpdateProjectInput!) {
+  updateProject(project: $project) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    type
+    client
+    nameProject
+    abbreviation
+    code
+    details
+    startDate
+    estimatedDate
+    endDate
+    observations
+    status
+    createdAt
+    updatedAt
+    tecnologies_mobile
+    tecnologies_frontend
+    tecnologies_backend
+    tecnologies_cloud
+    tecnologies_automatization
+    tecnologies_database
+    tecnologies_testing
+  }
+}
+mutation DeleteProject($pk: String!, $sk: String!) {
+  deleteProject(pk: $pk, sk: $sk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    type
+    client
+    nameProject
+    abbreviation
+    code
+    details
+    startDate
+    estimatedDate
+    endDate
+    observations
+    status
+    createdAt
+    updatedAt
+    tecnologies_mobile
+    tecnologies_frontend
+    tecnologies_backend
+    tecnologies_cloud
+    tecnologies_automatization
+    tecnologies_database
+    tecnologies_testing
+  }
+}
+mutation DeleteSkill($pk: String!, $sk: String!) {
+  deleteSkill(pk: $pk, sk: $sk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameSkill
+    description
+    level
+    experience
+    code
+    typeSkill
+  }
+}
+mutation AddSkill($skill: AddSkillInput!) {
+  addSkill(skill: $skill) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameSkill
+    description
+    level
+    experience
+    code
+    typeSkill
+  }
+}
+mutation UpdateSkill($user: UpdateSkillInput!) {
+  updateSkill(user: $user) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameSkill
+    description
+    level
+    experience
+    code
+    typeSkill
+  }
+}
+mutation AddLanguage($language: AddLanguageInput!) {
+  addLanguage(language: $language) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameLanguage
+    level
+    reading
+    writting
+    listening
+    speaking
+    creationDate
+    updateDate
+    observations
+  }
+}
+mutation UpdateLanguage($language: UpdateLanguageInput!) {
+  updateLanguage(language: $language) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameLanguage
+    level
+    reading
+    writting
+    listening
+    speaking
+    creationDate
+    updateDate
+    observations
+  }
+}
+mutation DeleteLanguage($pk: String!, $sk: String!) {
+  deleteLanguage(pk: $pk, sk: $sk) {
+    pk
+    sk
+    gsi1pk
+    gsi1sk
+    nameLanguage
+    level
+    reading
+    writting
+    listening
+    speaking
+    creationDate
+    updateDate
+    observations
+  }
+}
+mutation CreateSkillsinventoryDevRegistrydbMainDB(
+  $input: CreateSkillsinventoryDevRegistrydbMainDBInput!
+) {
+  createSkillsinventoryDevRegistrydbMainDB(input: $input) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}
+mutation UpdateSkillsinventoryDevRegistrydbMainDB(
+  $input: UpdateSkillsinventoryDevRegistrydbMainDBInput!
+) {
+  updateSkillsinventoryDevRegistrydbMainDB(input: $input) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}
+mutation DeleteSkillsinventoryDevRegistrydbMainDB(
+  $input: DeleteSkillsinventoryDevRegistrydbMainDBInput!
+) {
+  deleteSkillsinventoryDevRegistrydbMainDB(input: $input) {
+    pk
+    sk
+    email
+    gsi1pk
+    gsi1sk
+  }
+}

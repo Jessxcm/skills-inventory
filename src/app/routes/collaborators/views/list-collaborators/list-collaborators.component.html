@@ -1,0 +1,61 @@
+<page-header class="p-t-32 p-b-48 m-b--24 bg-gray-900"
+             [icon]="icon_header" [title]="title_header | translate" hideBreadcrumb>
+</page-header>
+
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="reactiveForm">
+
+      <div class="header-buttons">
+        <div class="start-button">
+          <!-- Toggle -->
+          <mat-slide-toggle formControlName="showSummary" class="start-button">Enable
+            Summary</mat-slide-toggle>
+        </div>
+
+        <div class="end-button">
+          <!-- Botón "New" -->
+          <button (click)="goToProfile()" class="end-button" mat-button mat-raised-button
+                  color="primary">
+            <mat-icon>add</mat-icon>
+            New
+          </button>
+        </div>
+
+        <div class="demo-section">
+          <!--  Junior - Middle - Senior -->
+          <div style="display: flex; align-items: center;">
+            <div class="badge-junior" style="width: 24px; height: 24px; border-radius: 50%;"></div>
+            <span style="margin-left: 5px;">Junior</span>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <div class="badge-middle" style="width: 24px; height: 24px; border-radius: 50%;"></div>
+            <span style="margin-left: 5px;">Middle</span>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <div class="badge-senior" style="width: 24px; height: 24px; border-radius: 50%;"></div>
+            <span style="margin-left: 5px;">Senior</span>
+          </div>
+        </div>
+      </div>
+
+
+      <mat-form-field>
+        <mat-label>Start typing to search...</mat-label>
+        <input formControlName="searchTerm" matInput placeholder="Ex. Angular-2 React-1"
+               (keyup)="filterCollaborators()">
+      </mat-form-field>
+
+      <!-- 5 Tarjetas -->
+      <div class="row">
+        <div class="col-sm-6 col-md-3" *ngFor="let collaborator of filteredCollaborators">
+          <app-collaborators-views-card-collaborator
+                                                     [showSummary]="showSummary"
+                                                     [collaborator]="collaborator">
+          </app-collaborators-views-card-collaborator>
+        </div>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

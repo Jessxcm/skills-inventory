@@ -1,0 +1,28 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- Proyección para agregar la nueva columna actions -->
+    <ng-content></ng-content>
+
+    <!-- Dynamics Columns -->
+    <ng-container [matColumnDef]="item.columnDb" *ngFor="let item of metaData">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{item.customTitleColumn}} </th>
+      <td mat-cell *matCellDef="let row"> {{row[item.columnDb]}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        [ngClass]="{hoverRow: options.theme==='light'}"
+        (click)="select(row)"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell padding-message" colspan="4">No data matching the filter
+        "{{filterValue}}"</td>
+    </tr>
+  </table>
+
+  <!-- Proyección para agregar la paginación -->
+  <ng-content></ng-content>
+
+</div>

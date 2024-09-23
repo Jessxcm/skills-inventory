@@ -1,0 +1,47 @@
+<mat-toolbar align="center" class="space-between" color="primary">
+  <span class=" centered">
+    <mat-icon>{{icon_header}}</mat-icon>
+    {{title_header}}
+  </span>
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-dialog-content>
+
+  <form [formGroup]="form">
+    <p>
+
+      <mat-form-field appearance="outline" class="demo-full-width">
+        <mat-label>Name:</mat-label>
+        <input formControlName="nombre" type="text" matInput required>
+        <mat-error *ngIf="">El nombre es obligatorio</mat-error>
+      </mat-form-field>
+    </p>
+
+    <div class="row" style="justify-content: flex-end;">
+      <mat-dialog-actions>
+
+        <!-- Save -->
+        <button type="button" mat-raised-button mat-dialog-close
+                color="primary" [disabled]="form.invalid" cdkFocusInitial
+                (click)="save()">
+          <mat-icon>save</mat-icon>
+          Save
+        </button>
+
+        <!-- Close -->
+        <button style="background-color: #212121 !important; color: white; "
+                type="button"
+                mat-raised-button
+                mat-dialog-close>
+          <mat-icon>close</mat-icon>
+          Close
+        </button>
+
+      </mat-dialog-actions>
+    </div>
+
+  </form>
+</mat-dialog-content>

@@ -1,0 +1,46 @@
+{
+  "menu": [
+    {
+      "route": "dashboard",
+      "name": "dashboard",
+      "type": "link",
+      "icon": "dashboard"
+    },
+    {
+      "route": "collaborators",
+      "name": "collaborators",
+      "type": "link",
+      "icon": "people"
+    },
+    {
+      "route": "users",
+      "name": "inventory",
+      "type": "link",
+      "icon": "laptop",
+      "permissions": {
+        "only": [
+          "ADMIN"
+        ]
+      }
+    },
+    {
+      "route": "medics",
+      "name": "medics",
+      "type": "link",
+      "icon": "group_add",
+      "permissions": {
+        "only": [
+          "ADMIN"
+        ]
+      }
+    },
+    {
+      "route": "projects",
+      "name": "projects",
+      "type": "link",
+      "icon": "code"
+    }
+  ]
+}
+
+
